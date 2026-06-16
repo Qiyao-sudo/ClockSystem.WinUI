@@ -39,6 +39,13 @@
         <None Remove="ClockSystem.WinUI.slnx" />
     </ItemGroup>
 
+    <!-- 测试项目位于子目录，排除其源码避免被主项目自动包含编译 -->
+    <ItemGroup>
+        <Compile Remove="ClockSystem.WinUI.Tests\**" />
+        <None Remove="ClockSystem.WinUI.Tests\**" />
+        <EmbeddedResource Remove="ClockSystem.WinUI.Tests\**" />
+    </ItemGroup>
+
     <ItemGroup>
         <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.*" />
         <PackageReference Include="Microsoft.Web.WebView2" Version="1.*" />

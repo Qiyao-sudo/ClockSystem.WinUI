@@ -1,404 +1,116 @@
 {
   "Path": {
-    "MusicPath": "D:\\Lenovo\\Desktop\\ZS\\record\\ZS1.WAV",
-    "BellPath": "D:\\Lenovo\\Desktop\\ZS\\record\\ZS2.WAV",
+    "MusicPath": "Resources/music.mp3",
+    "BellPath": "Resources/bell.mp3",
     "HourPaths": [
-      {
-        "Key": 0,
-        "Value": "D:\\Lenovo\\Desktop\\ZS\\record\\PL0.WAV"
-      },
-      {
-        "Key": 1,
-        "Value": "D:\\Lenovo\\Desktop\\ZS\\record\\PL1.WAV"
-      },
-      {
-        "Key": 2,
-        "Value": "Resources/hour_2.mp3"
-      },
-      {
-        "Key": 3,
-        "Value": "Resources/hour_3.mp3"
-      },
-      {
-        "Key": 4,
-        "Value": "Resources/hour_4.mp3"
-      },
-      {
-        "Key": 5,
-        "Value": "Resources/hour_5.mp3"
-      },
-      {
-        "Key": 6,
-        "Value": "Resources/hour_6.mp3"
-      },
-      {
-        "Key": 7,
-        "Value": "Resources/hour_7.mp3"
-      },
-      {
-        "Key": 8,
-        "Value": "Resources/hour_8.mp3"
-      },
-      {
-        "Key": 9,
-        "Value": "Resources/hour_9.mp3"
-      },
-      {
-        "Key": 10,
-        "Value": "D:\\Lenovo\\Desktop\\ZS\\record\\ZS3.WAV"
-      },
-      {
-        "Key": 11,
-        "Value": "Resources/hour_11.mp3"
-      },
-      {
-        "Key": 12,
-        "Value": "Resources/hour_12.mp3"
-      },
-      {
-        "Key": 13,
-        "Value": "Resources/hour_13.mp3"
-      },
-      {
-        "Key": 14,
-        "Value": "Resources/hour_14.mp3"
-      },
-      {
-        "Key": 15,
-        "Value": "Resources/hour_15.mp3"
-      },
-      {
-        "Key": 16,
-        "Value": "Resources/hour_16.mp3"
-      },
-      {
-        "Key": 17,
-        "Value": "Resources/hour_17.mp3"
-      },
-      {
-        "Key": 18,
-        "Value": "Resources/hour_18.mp3"
-      },
-      {
-        "Key": 19,
-        "Value": "Resources/hour_19.mp3"
-      },
-      {
-        "Key": 20,
-        "Value": "Resources/hour_20.mp3"
-      },
-      {
-        "Key": 21,
-        "Value": "Resources/hour_21.mp3"
-      },
-      {
-        "Key": 22,
-        "Value": "Resources/hour_22.mp3"
-      },
-      {
-        "Key": 23,
-        "Value": "Resources/hour_23.mp3"
-      }
+      { "Key": 0, "Value": "Resources/hour_0.mp3" },
+      { "Key": 1, "Value": "Resources/hour_1.mp3" },
+      { "Key": 2, "Value": "Resources/hour_2.mp3" },
+      { "Key": 3, "Value": "Resources/hour_3.mp3" },
+      { "Key": 4, "Value": "Resources/hour_4.mp3" },
+      { "Key": 5, "Value": "Resources/hour_5.mp3" },
+      { "Key": 6, "Value": "Resources/hour_6.mp3" },
+      { "Key": 7, "Value": "Resources/hour_7.mp3" },
+      { "Key": 8, "Value": "Resources/hour_8.mp3" },
+      { "Key": 9, "Value": "Resources/hour_9.mp3" },
+      { "Key": 10, "Value": "Resources/hour_10.mp3" },
+      { "Key": 11, "Value": "Resources/hour_11.mp3" },
+      { "Key": 12, "Value": "Resources/hour_12.mp3" },
+      { "Key": 13, "Value": "Resources/hour_13.mp3" },
+      { "Key": 14, "Value": "Resources/hour_14.mp3" },
+      { "Key": 15, "Value": "Resources/hour_15.mp3" },
+      { "Key": 16, "Value": "Resources/hour_16.mp3" },
+      { "Key": 17, "Value": "Resources/hour_17.mp3" },
+      { "Key": 18, "Value": "Resources/hour_18.mp3" },
+      { "Key": 19, "Value": "Resources/hour_19.mp3" },
+      { "Key": 20, "Value": "Resources/hour_20.mp3" },
+      { "Key": 21, "Value": "Resources/hour_21.mp3" },
+      { "Key": 22, "Value": "Resources/hour_22.mp3" },
+      { "Key": 23, "Value": "Resources/hour_23.mp3" }
     ],
     "HalfPaths": [
-      {
-        "Key": 0,
-        "Value": "Resources/half_0.mp3"
-      },
-      {
-        "Key": 1,
-        "Value": "Resources/half_1.mp3"
-      },
-      {
-        "Key": 2,
-        "Value": "Resources/half_2.mp3"
-      },
-      {
-        "Key": 3,
-        "Value": "Resources/half_3.mp3"
-      },
-      {
-        "Key": 4,
-        "Value": "Resources/half_4.mp3"
-      },
-      {
-        "Key": 5,
-        "Value": "Resources/half_5.mp3"
-      },
-      {
-        "Key": 6,
-        "Value": "Resources/half_6.mp3"
-      },
-      {
-        "Key": 7,
-        "Value": "Resources/half_7.mp3"
-      },
-      {
-        "Key": 8,
-        "Value": "Resources/half_8.mp3"
-      },
-      {
-        "Key": 9,
-        "Value": "Resources/half_9.mp3"
-      },
-      {
-        "Key": 10,
-        "Value": "Resources/half_10.mp3"
-      },
-      {
-        "Key": 11,
-        "Value": "Resources/half_11.mp3"
-      },
-      {
-        "Key": 12,
-        "Value": "Resources/half_12.mp3"
-      },
-      {
-        "Key": 13,
-        "Value": "Resources/half_13.mp3"
-      },
-      {
-        "Key": 14,
-        "Value": "Resources/half_14.mp3"
-      },
-      {
-        "Key": 15,
-        "Value": "Resources/half_15.mp3"
-      },
-      {
-        "Key": 16,
-        "Value": "Resources/half_16.mp3"
-      },
-      {
-        "Key": 17,
-        "Value": "Resources/half_17.mp3"
-      },
-      {
-        "Key": 18,
-        "Value": "Resources/half_18.mp3"
-      },
-      {
-        "Key": 19,
-        "Value": "Resources/half_19.mp3"
-      },
-      {
-        "Key": 20,
-        "Value": "Resources/half_20.mp3"
-      },
-      {
-        "Key": 21,
-        "Value": "Resources/half_21.mp3"
-      },
-      {
-        "Key": 22,
-        "Value": "Resources/half_22.mp3"
-      },
-      {
-        "Key": 23,
-        "Value": "Resources/half_23.mp3"
-      }
+      { "Key": 0, "Value": "Resources/half_0.mp3" },
+      { "Key": 1, "Value": "Resources/half_1.mp3" },
+      { "Key": 2, "Value": "Resources/half_2.mp3" },
+      { "Key": 3, "Value": "Resources/half_3.mp3" },
+      { "Key": 4, "Value": "Resources/half_4.mp3" },
+      { "Key": 5, "Value": "Resources/half_5.mp3" },
+      { "Key": 6, "Value": "Resources/half_6.mp3" },
+      { "Key": 7, "Value": "Resources/half_7.mp3" },
+      { "Key": 8, "Value": "Resources/half_8.mp3" },
+      { "Key": 9, "Value": "Resources/half_9.mp3" },
+      { "Key": 10, "Value": "Resources/half_10.mp3" },
+      { "Key": 11, "Value": "Resources/half_11.mp3" },
+      { "Key": 12, "Value": "Resources/half_12.mp3" },
+      { "Key": 13, "Value": "Resources/half_13.mp3" },
+      { "Key": 14, "Value": "Resources/half_14.mp3" },
+      { "Key": 15, "Value": "Resources/half_15.mp3" },
+      { "Key": 16, "Value": "Resources/half_16.mp3" },
+      { "Key": 17, "Value": "Resources/half_17.mp3" },
+      { "Key": 18, "Value": "Resources/half_18.mp3" },
+      { "Key": 19, "Value": "Resources/half_19.mp3" },
+      { "Key": 20, "Value": "Resources/half_20.mp3" },
+      { "Key": 21, "Value": "Resources/half_21.mp3" },
+      { "Key": 22, "Value": "Resources/half_22.mp3" },
+      { "Key": 23, "Value": "Resources/half_23.mp3" }
     ]
   },
   "Switch": {
     "HourSwitches": [
-      {
-        "Key": 0,
-        "Value": false
-      },
-      {
-        "Key": 1,
-        "Value": false
-      },
-      {
-        "Key": 2,
-        "Value": false
-      },
-      {
-        "Key": 3,
-        "Value": false
-      },
-      {
-        "Key": 4,
-        "Value": false
-      },
-      {
-        "Key": 5,
-        "Value": false
-      },
-      {
-        "Key": 6,
-        "Value": true
-      },
-      {
-        "Key": 7,
-        "Value": true
-      },
-      {
-        "Key": 8,
-        "Value": true
-      },
-      {
-        "Key": 9,
-        "Value": true
-      },
-      {
-        "Key": 10,
-        "Value": true
-      },
-      {
-        "Key": 11,
-        "Value": true
-      },
-      {
-        "Key": 12,
-        "Value": true
-      },
-      {
-        "Key": 13,
-        "Value": true
-      },
-      {
-        "Key": 14,
-        "Value": true
-      },
-      {
-        "Key": 15,
-        "Value": true
-      },
-      {
-        "Key": 16,
-        "Value": true
-      },
-      {
-        "Key": 17,
-        "Value": true
-      },
-      {
-        "Key": 18,
-        "Value": true
-      },
-      {
-        "Key": 19,
-        "Value": true
-      },
-      {
-        "Key": 20,
-        "Value": true
-      },
-      {
-        "Key": 21,
-        "Value": true
-      },
-      {
-        "Key": 22,
-        "Value": false
-      },
-      {
-        "Key": 23,
-        "Value": false
-      }
+      { "Key": 0, "Value": false },
+      { "Key": 1, "Value": false },
+      { "Key": 2, "Value": false },
+      { "Key": 3, "Value": false },
+      { "Key": 4, "Value": false },
+      { "Key": 5, "Value": false },
+      { "Key": 6, "Value": true },
+      { "Key": 7, "Value": true },
+      { "Key": 8, "Value": true },
+      { "Key": 9, "Value": true },
+      { "Key": 10, "Value": true },
+      { "Key": 11, "Value": true },
+      { "Key": 12, "Value": true },
+      { "Key": 13, "Value": true },
+      { "Key": 14, "Value": true },
+      { "Key": 15, "Value": true },
+      { "Key": 16, "Value": true },
+      { "Key": 17, "Value": true },
+      { "Key": 18, "Value": true },
+      { "Key": 19, "Value": true },
+      { "Key": 20, "Value": true },
+      { "Key": 21, "Value": true },
+      { "Key": 22, "Value": false },
+      { "Key": 23, "Value": false }
     ],
     "HalfSwitches": [
-      {
-        "Key": 0,
-        "Value": false
-      },
-      {
-        "Key": 1,
-        "Value": false
-      },
-      {
-        "Key": 2,
-        "Value": false
-      },
-      {
-        "Key": 3,
-        "Value": false
-      },
-      {
-        "Key": 4,
-        "Value": false
-      },
-      {
-        "Key": 5,
-        "Value": false
-      },
-      {
-        "Key": 6,
-        "Value": true
-      },
-      {
-        "Key": 7,
-        "Value": true
-      },
-      {
-        "Key": 8,
-        "Value": true
-      },
-      {
-        "Key": 9,
-        "Value": true
-      },
-      {
-        "Key": 10,
-        "Value": true
-      },
-      {
-        "Key": 11,
-        "Value": true
-      },
-      {
-        "Key": 12,
-        "Value": true
-      },
-      {
-        "Key": 13,
-        "Value": true
-      },
-      {
-        "Key": 14,
-        "Value": true
-      },
-      {
-        "Key": 15,
-        "Value": true
-      },
-      {
-        "Key": 16,
-        "Value": true
-      },
-      {
-        "Key": 17,
-        "Value": true
-      },
-      {
-        "Key": 18,
-        "Value": true
-      },
-      {
-        "Key": 19,
-        "Value": true
-      },
-      {
-        "Key": 20,
-        "Value": true
-      },
-      {
-        "Key": 21,
-        "Value": true
-      },
-      {
-        "Key": 22,
-        "Value": false
-      },
-      {
-        "Key": 23,
-        "Value": false
-      }
+      { "Key": 0, "Value": false },
+      { "Key": 1, "Value": false },
+      { "Key": 2, "Value": false },
+      { "Key": 3, "Value": false },
+      { "Key": 4, "Value": false },
+      { "Key": 5, "Value": false },
+      { "Key": 6, "Value": true },
+      { "Key": 7, "Value": true },
+      { "Key": 8, "Value": true },
+      { "Key": 9, "Value": true },
+      { "Key": 10, "Value": true },
+      { "Key": 11, "Value": true },
+      { "Key": 12, "Value": true },
+      { "Key": 13, "Value": true },
+      { "Key": 14, "Value": true },
+      { "Key": 15, "Value": true },
+      { "Key": 16, "Value": true },
+      { "Key": 17, "Value": true },
+      { "Key": 18, "Value": true },
+      { "Key": 19, "Value": true },
+      { "Key": 20, "Value": true },
+      { "Key": 21, "Value": true },
+      { "Key": 22, "Value": false },
+      { "Key": 23, "Value": false }
     ]
   },
   "Light": {
-    "LightOnTime": "17:00",
-    "LightOffTime": "8:00"
+    "LightOnTime": "18:00",
+    "LightOffTime": "06:00"
   }
 }

@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Page
+    x:Class="ClockSystem.WinUI.Views.SettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="Transparent">
+
+    <Grid Padding="32,24,32,24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Page Header -->
+        <Grid Grid.Row="0" Margin="0,0,0,16">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0">
+                <TextBlock Text="设置" Style="{StaticResource PageHeaderTitleStyle}"/>
+                <TextBlock Text="配置报时音频、开关与灯光"
+                           FontSize="13"
+                           Foreground="{ThemeResource TextMutedBrush}"
+                           Margin="0,6,0,0"/>
+            </StackPanel>
+            <Button Grid.Column="1"
+                    Style="{StaticResource PrimaryButtonStyle}"
+                    Click="OnSaveClicked"
+                    VerticalAlignment="Center">
+                <StackPanel Orientation="Horizontal" Spacing="6">
+                    <FontIcon Glyph="&#xE74E;" FontSize="14"/>
+                    <TextBlock Text="保存" FontSize="13"/>
+                </StackPanel>
+            </Button>
+        </Grid>
+
+        <TabView Grid.Row="1"
+                 IsAddTabButtonVisible="False"
+                 TabWidthMode="Equal"
+                 Background="Transparent">
+
+            <!-- 文件路径 -->
+            <TabViewItem Header="文件路径">
+                <TabViewItem.IconSource>
+                    <FontIconSource Glyph="&#xE8B7;"/>
+                </TabViewItem.IconSource>
+                <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="0,16,0,0">
+                    <StackPanel Spacing="20">
+
+                        <Border Style="{StaticResource CardStyle}" Padding="16">
+                            <StackPanel Spacing="12">
+                                <StackPanel Orientation="Horizontal" Spacing="8">
+                                    <FontIcon Glyph="&#xE8D6;" Foreground="{ThemeResource PrimaryBrush}" FontSize="18"/>
+                                    <TextBlock Text="音频文件设置" Style="{StaticResource CardTitleStyle}"/>
+                                </StackPanel>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Text="音乐文件" VerticalAlignment="Center" Style="{StaticResource LabelStyle}"/>
+                                    <TextBox Grid.Column="1"
+                                             Text="{Binding Config.Path.MusicPath, Mode=TwoWay}"
+                                             VerticalAlignment="Center" Margin="0,0,12,0"
+                                             PlaceholderText="选择音乐文件路径"/>
+                                    <Button Grid.Column="2" Style="{StaticResource SecondaryButtonStyle}" Click="BrowseMusicButton_Click" Padding="12,6">
+                                        <StackPanel Orientation="Horizontal" Spacing="4">
+                                            <FontIcon Glyph="&#xE8E5;" FontSize="12"/>
+                                            <TextBlock Text="浏览" FontSize="12"/>
+                                        </StackPanel>
+                                    </Button>
+                                </Grid>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Text="钟声文件" VerticalAlignment="Center" Style="{StaticResource LabelStyle}"/>
+                                    <TextBox Grid.Column="1"
+                                             Text="{Binding Config.Path.BellPath, Mode=TwoWay}"
+                                             VerticalAlignment="Center" Margin="0,0,12,0"
+                                             PlaceholderText="选择钟声文件路径"/>
+                                    <Button Grid.Column="2" Style="{StaticResource SecondaryButtonStyle}" Click="BrowseBellButton_Click" Padding="12,6">
+                                        <StackPanel Orientation="Horizontal" Spacing="4">
+                                            <FontIcon Glyph="&#xE8E5;" FontSize="12"/>
+                                            <TextBlock Text="浏览" FontSize="12"/>
+                                        </StackPanel>
+                                    </Button>
+                                </Grid>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Style="{StaticResource CardStyle}" Padding="16">
+                            <StackPanel Spacing="12">
+                                <StackPanel Orientation="Horizontal" Spacing="8">
+                                    <FontIcon Glyph="&#xE8E1;" Foreground="{ThemeResource SecondaryBrush}" FontSize="18"/>
+                                    <TextBlock Text="整点报时语音路径" Style="{StaticResource CardTitleStyle}"/>
+                                </StackPanel>
+                                <ItemsControl x:Name="HourPathsItemsControl"/>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Style="{StaticResource CardStyle}" Padding="16">
+                            <StackPanel Spacing="12">
+                                <StackPanel Orientation="Horizontal" Spacing="8">
+                                    <FontIcon Glyph="&#xE8E1;" Foreground="{ThemeResource AccentBrush}" FontSize="18"/>
+                                    <TextBlock Text="半点报时语音路径" Style="{StaticResource CardTitleStyle}"/>
+                                </StackPanel>
+                                <ItemsControl x:Name="HalfPathsItemsControl"/>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabViewItem>
+
+            <!-- 报时开关 -->
+            <TabViewItem Header="报时开关">
+                <TabViewItem.IconSource>
+                    <FontIconSource Glyph="&#xE7E8;"/>
+                </TabViewItem.IconSource>
+                <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="0,16,0,0">
+                    <StackPanel Spacing="20">
+                        <Border Style="{StaticResource CardStyle}" Padding="16">
+                            <StackPanel Spacing="16">
+                                <StackPanel Orientation="Horizontal" Spacing="8">
+                                    <FontIcon Glyph="&#xE823;" Foreground="{ThemeResource SecondaryBrush}" FontSize="18"/>
+                                    <TextBlock Text="整点报时开关" Style="{StaticResource CardTitleStyle}"/>
+                                </StackPanel>
+                                <ItemsControl x:Name="HourSwitchesItemsControl"/>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Style="{StaticResource CardStyle}" Padding="16">
+                            <StackPanel Spacing="16">
+                                <StackPanel Orientation="Horizontal" Spacing="8">
+                                    <FontIcon Glyph="&#xE823;" Foreground="{ThemeResource AccentBrush}" FontSize="18"/>
+                                    <TextBlock Text="半点报时开关" Style="{StaticResource CardTitleStyle}"/>
+                                </StackPanel>
+                                <ItemsControl x:Name="HalfSwitchesItemsControl"/>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Style="{StaticResource CardStyle}" Padding="16" Background="{ThemeResource Gray50Brush}">
+                            <StackPanel Spacing="12">
+                                <TextBlock Text="批量操作" Style="{StaticResource LabelStyle}" FontSize="13"/>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Button Grid.Column="0" Style="{StaticResource SecondaryButtonStyle}" Click="SelectAllHourButton_Click" Margin="0,0,6,0" Padding="8,6">
+                                        <TextBlock Text="整点全选" FontSize="12"/>
+                                    </Button>
+                                    <Button Grid.Column="1" Style="{StaticResource GhostButtonStyle}" Click="DeselectAllHourButton_Click" Margin="6,0,6,0" Padding="8,6">
+                                        <TextBlock Text="整点全不选" FontSize="12"/>
+                                    </Button>
+                                    <Button Grid.Column="2" Style="{StaticResource SecondaryButtonStyle}" Click="SelectAllHalfButton_Click" Margin="6,0,6,0" Padding="8,6">
+                                        <TextBlock Text="半点全选" FontSize="12"/>
+                                    </Button>
+                                    <Button Grid.Column="3" Style="{StaticResource GhostButtonStyle}" Click="DeselectAllHalfButton_Click" Margin="6,0,0,0" Padding="8,6">
+                                        <TextBlock Text="半点全不选" FontSize="12"/>
+                                    </Button>
+                                </Grid>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabViewItem>
+
+            <!-- 灯光设置 -->
+            <TabViewItem Header="灯光设置">
+                <TabViewItem.IconSource>
+                    <FontIconSource Glyph="&#xE706;"/>
+                </TabViewItem.IconSource>
+                <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="0,16,0,0">
+                    <Border Style="{StaticResource CardStyle}" Padding="20">
+                        <StackPanel Spacing="24">
+                            <StackPanel Orientation="Horizontal" Spacing="8">
+                                <FontIcon Glyph="&#xE706;" Foreground="{ThemeResource WarningBrush}" FontSize="24"/>
+                                <TextBlock Text="自动灯光控制" Style="{StaticResource CardTitleStyle}" FontSize="22"/>
+                            </StackPanel>
+                            <TextBlock Text="设置灯光自动开启和关闭的时间，系统将根据设定时间自动切换时钟显示模式并下发灯光指令。"
+                                       TextWrapping="Wrap"
+                                       Foreground="{ThemeResource TextSecondaryBrush}"
+                                       LineHeight="22"/>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="24"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Border Grid.Column="0" Background="{ThemeResource Gray50Brush}" CornerRadius="{StaticResource RadiusMd}" Padding="16">
+                                    <StackPanel Spacing="12">
+                                        <StackPanel Orientation="Horizontal" Spacing="8">
+                                            <FontIcon Glyph="&#xE706;" Foreground="{ThemeResource SuccessBrush}" FontSize="16"/>
+                                            <TextBlock Text="灯光开启时间" Style="{StaticResource LabelStyle}"/>
+                                        </StackPanel>
+                                        <TextBox Text="{Binding Config.Light.LightOnTime, Mode=TwoWay}"
+                                                 PlaceholderText="HH:MM" FontSize="18" FontWeight="SemiBold"
+                                                 HorizontalAlignment="Center" Width="120"/>
+                                        <TextBlock Text="格式：HH:MM (24小时制)" FontSize="11"
+                                                   Foreground="{ThemeResource TextMutedBrush}" HorizontalAlignment="Center"/>
+                                    </StackPanel>
+                                </Border>
+                                <FontIcon Grid.Column="1" Glyph="&#xE72A;" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                          Foreground="{ThemeResource TextMutedBrush}"/>
+                                <Border Grid.Column="2" Background="{ThemeResource Gray50Brush}" CornerRadius="{StaticResource RadiusMd}" Padding="16">
+                                    <StackPanel Spacing="12">
+                                        <StackPanel Orientation="Horizontal" Spacing="8">
+                                            <FontIcon Glyph="&#xE708;" Foreground="{ThemeResource Gray500Brush}" FontSize="16"/>
+                                            <TextBlock Text="灯光关闭时间" Style="{StaticResource LabelStyle}"/>
+                                        </StackPanel>
+                                        <TextBox Text="{Binding Config.Light.LightOffTime, Mode=TwoWay}"
+                                                 PlaceholderText="HH:MM" FontSize="18" FontWeight="SemiBold"
+                                                 HorizontalAlignment="Center" Width="120"/>
+                                        <TextBlock Text="格式：HH:MM (24小时制)" FontSize="11"
+                                                   Foreground="{ThemeResource TextMutedBrush}" HorizontalAlignment="Center"/>
+                                    </StackPanel>
+                                </Border>
+                            </Grid>
+                        </StackPanel>
+                    </Border>
+                </ScrollViewer>
+            </TabViewItem>
+
+            <!-- 外观 -->
+            <TabViewItem Header="外观">
+                <TabViewItem.IconSource>
+                    <FontIconSource Glyph="&#xE771;"/>
+                </TabViewItem.IconSource>
+                <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="0,16,0,0">
+                    <Border Style="{StaticResource CardStyle}" Padding="20">
+                        <StackPanel Spacing="16">
+                            <StackPanel Orientation="Horizontal" Spacing="8">
+                                <FontIcon Glyph="&#xE790;" Foreground="{ThemeResource PrimaryBrush}" FontSize="20"/>
+                                <TextBlock Text="主题" Style="{StaticResource CardTitleStyle}"/>
+                            </StackPanel>
+                            <TextBlock Text="选择应用的外观主题，更改立即生效并保存。"
+                                       Foreground="{ThemeResource TextSecondaryBrush}" FontSize="13"/>
+                            <StackPanel Spacing="8" Margin="0,4,0,0">
+                                <RadioButton x:Name="ThemeSystemRadio" Content="跟随系统" Click="OnThemeRadio"/>
+                                <RadioButton x:Name="ThemeLightRadio" Content="亮色" Click="OnThemeRadio"/>
+                                <RadioButton x:Name="ThemeDarkRadio" Content="暗色" Click="OnThemeRadio"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </ScrollViewer>
+            </TabViewItem>
+        </TabView>
+    </Grid>
+</Page>

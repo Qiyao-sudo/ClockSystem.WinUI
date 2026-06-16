@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Page
+    x:Class="ClockSystem.WinUI.Views.AboutPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="Transparent">
+
+    <ScrollViewer Padding="32,24,32,24" VerticalScrollBarVisibility="Auto">
+        <StackPanel Spacing="20" MaxWidth="720">
+
+            <!-- Header -->
+            <StackPanel Margin="0,0,0,8">
+                <TextBlock Text="关于" Style="{StaticResource PageHeaderTitleStyle}"/>
+                <TextBlock Text="子母钟管理系统 · WinUI 版"
+                           FontSize="13" Foreground="{ThemeResource TextMutedBrush}" Margin="0,6,0,0"/>
+            </StackPanel>
+
+            <!-- 应用卡片 -->
+            <Border Style="{StaticResource CardStyle}" Padding="24">
+                <StackPanel Spacing="16">
+                    <StackPanel Orientation="Horizontal" Spacing="16">
+                        <Grid Width="56" Height="56" Background="{ThemeResource PrimaryBrush}" CornerRadius="14">
+                            <FontIcon Glyph="&#xE823;" Foreground="White" FontSize="28"/>
+                        </Grid>
+                        <StackPanel VerticalAlignment="Center">
+                            <TextBlock Text="子母钟管理系统" FontSize="20" FontWeight="Bold"
+                                       Foreground="{ThemeResource TextPrimaryBrush}"/>
+                            <TextBlock Text="Master Clock System · WinUI 3"
+                                       FontSize="13" Foreground="{ThemeResource TextSecondaryBrush}"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <Border Background="{ThemeResource Gray50Brush}" CornerRadius="{StaticResource RadiusMd}" Padding="16">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Grid.Column="0" Spacing="4">
+                                <TextBlock Text="运行平台" Style="{StaticResource LabelStyle}" FontSize="11"/>
+                                <TextBlock Text="Windows 10 / 11 (.NET 10)"
+                                           Style="{StaticResource ValueStyle}" FontSize="13"/>
+                            </StackPanel>
+                            <StackPanel Grid.Column="1" Spacing="4">
+                                <TextBlock Text="UI 框架" Style="{StaticResource LabelStyle}" FontSize="11"/>
+                                <TextBlock Text="WinUI 3 / Windows App SDK"
+                                           Style="{StaticResource ValueStyle}" FontSize="13"/>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </StackPanel>
+            </Border>
+
+            <!-- 功能说明 -->
+            <Border Style="{StaticResource CardStyle}" Padding="24">
+                <StackPanel Spacing="12">
+                    <StackPanel Orientation="Horizontal" Spacing="8">
+                        <FontIcon Glyph="&#xE946;" Foreground="{ThemeResource SecondaryBrush}" FontSize="18"/>
+                        <TextBlock Text="功能概览" Style="{StaticResource CardTitleStyle}"/>
+                    </StackPanel>
+                    <TextBlock TextWrapping="Wrap" LineHeight="22" Foreground="{ThemeResource TextSecondaryBrush}">
+                        母钟时间显示与精确调整、整点 / 半点自定义报时、钟表灯光定时开关、
+                        报时音频自定义，以及面向塔钟硬件的远程控制通信层（接口已就绪，待接入现场协议）。
+                    </TextBlock>
+                </StackPanel>
+            </Border>
+
+            <!-- 仓库 -->
+            <Border Style="{StaticResource CardStyle}" Padding="24">
+                <StackPanel Spacing="12">
+                    <StackPanel Orientation="Horizontal" Spacing="8">
+                        <FontIcon Glyph="&#xE8E5;" Foreground="{ThemeResource PrimaryBrush}" FontSize="18"/>
+                        <TextBlock Text="源仓库" Style="{StaticResource CardTitleStyle}"/>
+                    </StackPanel>
+                    <HyperlinkButton Content="github.com/qiyao11/ClockSystem"
+                                     NavigateUri="https://github.com/qiyao11/ClockSystem"
+                                     Padding="0"/>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

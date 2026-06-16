@@ -21,7 +21,7 @@
         </ResourceDictionary>
     </ContentDialog.Resources>
 
-    <Grid Width="520" Padding="24">
+    <Grid HorizontalAlignment="Stretch" MinWidth="460" Padding="24">
         <StackPanel Spacing="24">
             
             <!-- Header Info -->
@@ -208,6 +208,18 @@
                                Foreground="#10B981"
                                FontFamily="Consolas, Monaco, monospace"
                                HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Inline Error -->
+            <Border x:Name="ErrorBorder"
+                    Background="#FEE2E2"
+                    CornerRadius="{StaticResource RadiusSm}"
+                    Padding="12,8"
+                    Visibility="Collapsed">
+                <StackPanel Orientation="Horizontal" Spacing="8">
+                    <FontIcon Glyph="&#xE783;" Foreground="#EF4444" FontSize="14"/>
+                    <TextBlock x:Name="ErrorTextBlock" Foreground="#B91C1C" FontSize="12" TextWrapping="Wrap"/>
                 </StackPanel>
             </Border>
         </StackPanel>

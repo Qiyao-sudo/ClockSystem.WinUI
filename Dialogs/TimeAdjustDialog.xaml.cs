@@ -7,6 +7,10 @@ namespace ClockSystem.WinUI.Dialogs
     public sealed partial class TimeAdjustDialog : ContentDialog
     {
         public DateTime SelectedTime { get; private set; }
+
+        /// <summary>用户点击“应用”时构造出的时间是否合法。</summary>
+        public bool IsValid { get; private set; }
+
         private DateTime _originalTime;
 
         public TimeAdjustDialog(DateTime currentTime)
@@ -21,7 +25,6 @@ namespace ClockSystem.WinUI.Dialogs
             MinuteBox.Value = currentTime.Minute;
             SecondBox.Value = currentTime.Second;
 
-            // Attach value changed handlers for preview update
             YearBox.ValueChanged += (s, e) => UpdatePreview();
             MonthBox.ValueChanged += (s, e) => UpdatePreview();
             DayBox.ValueChanged += (s, e) => UpdatePreview();
@@ -34,29 +37,28 @@ namespace ClockSystem.WinUI.Dialogs
 
         private void UpdatePreview()
         {
-            try
+            if (TryBuild(out var preview, out var error))
             {
-                var year = (int)YearBox.Value;
-                var month = (int)MonthBox.Value;
-                var day = (int)DayBox.Value;
-                var hour = (int)HourBox.Value;
-                var minute = (int)MinuteBox.Value;
-                var second = (int)SecondBox.Value;
-                
-                var previewTime = new DateTime(year, month, day, hour, minute, second);
-                PreviewTextBlock.Text = previewTime.ToString("yyyy-MM-dd HH:mm:ss");
+                PreviewTextBlock.Text = preview.ToString("yyyy-MM-dd HH:mm:ss");
+                PreviewTextBlock.Foreground = new Microsoft.UI.Xaml.Media.SolidColorBrush(Microsoft.UI.Colors.LimeGreen);
+                ErrorTextBlock.Text = "";
+                ErrorBorder.Visibility = Visibility.Collapsed;
             }
-            catch
+            else
             {
                 PreviewTextBlock.Text = "无效日期时间";
+                PreviewTextBlock.Foreground = new Microsoft.UI.Xaml.Media.SolidColorBrush(Microsoft.UI.Colors.OrangeRed);
+                ErrorTextBlock.Text = error;
+                ErrorBorder.Visibility = Visibility.Visible;
             }
         }
 
-        private void OnApplyClicked(ContentDialog sender, ContentDialogButtonClickEventArgs args)
+        private bool TryBuild(out DateTime result, out string error)
         {
+            error = "";
             try
             {
-                SelectedTime = new DateTime(
+                result = new DateTime(
                     (int)YearBox.Value,
                     (int)MonthBox.Value,
                     (int)DayBox.Value,
@@ -64,19 +66,36 @@ namespace ClockSystem.WinUI.Dialogs
                     (int)MinuteBox.Value,
                     (int)SecondBox.Value
                 );
+                return true;
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                result = default;
+                error = "数值超出有效范围，请检查各字段。";
+                return false;
             }
             catch (Exception ex)
             {
-                args.Cancel = true;
-                var errorDialog = new ContentDialog
-                {
-                    Title = "错误",
-                    Content = "时间设置错误: " + ex.Message,
-                    CloseButtonText = "确定",
-                    XamlRoot = this.XamlRoot
-                };
-                _ = errorDialog.ShowAsync();
+                result = default;
+                error = "时间设置错误: " + ex.Message;
+                return false;
             }
+        }
+
+        private void OnApplyClicked(ContentDialog sender, ContentDialogButtonClickEventArgs args)
+        {
+            // 取消关闭并保留对话框，让用户在内联错误提示中修正，避免嵌套 ContentDialog
+            if (!TryBuild(out var time, out var error))
+            {
+                args.Cancel = true;
+                ErrorTextBlock.Text = error;
+                ErrorBorder.Visibility = Visibility.Visible;
+                IsValid = false;
+                return;
+            }
+
+            SelectedTime = time;
+            IsValid = true;
         }
 
         private void SetCurrentTimeButton_Click(object sender, RoutedEventArgs e)

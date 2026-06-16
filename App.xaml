@@ -13,75 +13,148 @@
                 <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
             </ResourceDictionary.MergedDictionaries>
 
-            <!-- Modern Color Palette -->
-            <Color x:Key="PrimaryColor">#2563EB</Color>
-            <Color x:Key="PrimaryDarkColor">#1D4ED8</Color>
-            <Color x:Key="PrimaryLightColor">#3B82F6</Color>
-            <Color x:Key="SecondaryColor">#10B981</Color>
-            <Color x:Key="AccentColor">#F59E0B</Color>
-            <Color x:Key="DangerColor">#EF4444</Color>
-            <Color x:Key="SuccessColor">#10B981</Color>
-            <Color x:Key="WarningColor">#F59E0B</Color>
-            <Color x:Key="InfoColor">#3B82F6</Color>
+            <!-- 颜色随主题翻转：Light / Dark / Default 三套 -->
+            <ResourceDictionary.ThemeDictionaries>
 
-            <!-- Neutral Colors -->
-            <Color x:Key="Gray50">#F9FAFB</Color>
-            <Color x:Key="Gray100">#F3F4F6</Color>
-            <Color x:Key="Gray200">#E5E7EB</Color>
-            <Color x:Key="Gray300">#D1D5DB</Color>
-            <Color x:Key="Gray400">#9CA3AF</Color>
-            <Color x:Key="Gray500">#6B7280</Color>
-            <Color x:Key="Gray600">#4B5563</Color>
-            <Color x:Key="Gray700">#374151</Color>
-            <Color x:Key="Gray800">#1F2937</Color>
-            <Color x:Key="Gray900">#111827</Color>
+                <!-- ============ 亮色主题 ============ -->
+                <ResourceDictionary x:Key="Light">
+                    <Color x:Key="PrimaryColor">#2563EB</Color>
+                    <Color x:Key="PrimaryDarkColor">#1D4ED8</Color>
+                    <Color x:Key="PrimaryLightColor">#3B82F6</Color>
+                    <Color x:Key="SecondaryColor">#10B981</Color>
+                    <Color x:Key="AccentColor">#F59E0B</Color>
+                    <Color x:Key="DangerColor">#EF4444</Color>
+                    <Color x:Key="SuccessColor">#10B981</Color>
+                    <Color x:Key="WarningColor">#F59E0B</Color>
+                    <Color x:Key="InfoColor">#3B82F6</Color>
 
-            <!-- Text Colors -->
-            <Color x:Key="TextPrimaryColor">#111827</Color>
-            <Color x:Key="TextSecondaryColor">#6B7280</Color>
-            <Color x:Key="TextMutedColor">#9CA3AF</Color>
+                    <Color x:Key="Gray50">#F9FAFB</Color>
+                    <Color x:Key="Gray100">#F3F4F6</Color>
+                    <Color x:Key="Gray200">#E5E7EB</Color>
+                    <Color x:Key="Gray300">#D1D5DB</Color>
+                    <Color x:Key="Gray400">#9CA3AF</Color>
+                    <Color x:Key="Gray500">#6B7280</Color>
+                    <Color x:Key="Gray600">#4B5563</Color>
+                    <Color x:Key="Gray700">#374151</Color>
+                    <Color x:Key="Gray800">#1F2937</Color>
+                    <Color x:Key="Gray900">#111827</Color>
 
-            <!-- Background Colors -->
-            <Color x:Key="BackgroundColor">#F9FAFB</Color>
-            <Color x:Key="SurfaceColor">#FFFFFF</Color>
-            <Color x:Key="CardBackgroundColor">#FFFFFF</Color>
+                    <Color x:Key="TextPrimaryColor">#111827</Color>
+                    <Color x:Key="TextSecondaryColor">#6B7280</Color>
+                    <Color x:Key="TextMutedColor">#9CA3AF</Color>
 
-            <!-- Border Colors -->
-            <Color x:Key="BorderLightColor">#E5E7EB</Color>
-            <Color x:Key="BorderColor">#D1D5DB</Color>
+                    <Color x:Key="BackgroundColor">#F9FAFB</Color>
+                    <Color x:Key="SurfaceColor">#FFFFFF</Color>
+                    <Color x:Key="CardBackgroundColor">#FFFFFF</Color>
 
-            <!-- Solid Color Brushes -->
-            <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource PrimaryColor}" />
-            <SolidColorBrush x:Key="PrimaryDarkBrush" Color="{StaticResource PrimaryDarkColor}" />
-            <SolidColorBrush x:Key="PrimaryLightBrush" Color="{StaticResource PrimaryLightColor}" />
-            <SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource SecondaryColor}" />
-            <SolidColorBrush x:Key="AccentBrush" Color="{StaticResource AccentColor}" />
-            <SolidColorBrush x:Key="DangerBrush" Color="{StaticResource DangerColor}" />
-            <SolidColorBrush x:Key="SuccessBrush" Color="{StaticResource SuccessColor}" />
-            <SolidColorBrush x:Key="WarningBrush" Color="{StaticResource WarningColor}" />
-            <SolidColorBrush x:Key="InfoBrush" Color="{StaticResource InfoColor}" />
+                    <Color x:Key="BorderLightColor">#E5E7EB</Color>
+                    <Color x:Key="BorderColor">#D1D5DB</Color>
+                </ResourceDictionary>
 
-            <SolidColorBrush x:Key="Gray50Brush" Color="{StaticResource Gray50}" />
-            <SolidColorBrush x:Key="Gray100Brush" Color="{StaticResource Gray100}" />
-            <SolidColorBrush x:Key="Gray200Brush" Color="{StaticResource Gray200}" />
-            <SolidColorBrush x:Key="Gray300Brush" Color="{StaticResource Gray300}" />
-            <SolidColorBrush x:Key="Gray400Brush" Color="{StaticResource Gray400}" />
-            <SolidColorBrush x:Key="Gray500Brush" Color="{StaticResource Gray500}" />
-            <SolidColorBrush x:Key="Gray600Brush" Color="{StaticResource Gray600}" />
-            <SolidColorBrush x:Key="Gray700Brush" Color="{StaticResource Gray700}" />
-            <SolidColorBrush x:Key="Gray800Brush" Color="{StaticResource Gray800}" />
-            <SolidColorBrush x:Key="Gray900Brush" Color="{StaticResource Gray900}" />
+                <!-- ============ 暗色主题 ============ -->
+                <ResourceDictionary x:Key="Dark">
+                    <Color x:Key="PrimaryColor">#60A5FA</Color>
+                    <Color x:Key="PrimaryDarkColor">#3B82F6</Color>
+                    <Color x:Key="PrimaryLightColor">#93C5FD</Color>
+                    <Color x:Key="SecondaryColor">#34D399</Color>
+                    <Color x:Key="AccentColor">#FBBF24</Color>
+                    <Color x:Key="DangerColor">#F87171</Color>
+                    <Color x:Key="SuccessColor">#34D399</Color>
+                    <Color x:Key="WarningColor">#FBBF24</Color>
+                    <Color x:Key="InfoColor">#60A5FA</Color>
 
-            <SolidColorBrush x:Key="TextPrimaryBrush" Color="{StaticResource TextPrimaryColor}" />
-            <SolidColorBrush x:Key="TextSecondaryBrush" Color="{StaticResource TextSecondaryColor}" />
-            <SolidColorBrush x:Key="TextMutedBrush" Color="{StaticResource TextMutedColor}" />
+                    <!-- 暗色下灰阶反转：Gray50 作浅色面板背景 → 改为深色 -->
+                    <Color x:Key="Gray50">#1E293B</Color>
+                    <Color x:Key="Gray100">#243044</Color>
+                    <Color x:Key="Gray200">#334155</Color>
+                    <Color x:Key="Gray300">#475569</Color>
+                    <Color x:Key="Gray400">#64748B</Color>
+                    <Color x:Key="Gray500">#94A3B8</Color>
+                    <Color x:Key="Gray600">#CBD5E1</Color>
+                    <Color x:Key="Gray700">#E2E8F0</Color>
+                    <Color x:Key="Gray800">#0B1220</Color>
+                    <Color x:Key="Gray900">#020617</Color>
 
-            <SolidColorBrush x:Key="BackgroundBrush" Color="{StaticResource BackgroundColor}" />
-            <SolidColorBrush x:Key="SurfaceBrush" Color="{StaticResource SurfaceColor}" />
-            <SolidColorBrush x:Key="CardBackgroundBrush" Color="{StaticResource CardBackgroundColor}" />
+                    <Color x:Key="TextPrimaryColor">#F9FAFB</Color>
+                    <Color x:Key="TextSecondaryColor">#CBD5E1</Color>
+                    <Color x:Key="TextMutedColor">#94A3B8</Color>
 
-            <SolidColorBrush x:Key="BorderLightBrush" Color="{StaticResource BorderLightColor}" />
-            <SolidColorBrush x:Key="BorderBrush" Color="{StaticResource BorderColor}" />
+                    <Color x:Key="BackgroundColor">#0F172A</Color>
+                    <Color x:Key="SurfaceColor">#1E293B</Color>
+                    <Color x:Key="CardBackgroundColor">#1E293B</Color>
+
+                    <Color x:Key="BorderLightColor">#334155</Color>
+                    <Color x:Key="BorderColor">#475569</Color>
+                </ResourceDictionary>
+
+                <!-- ============ 默认（跟随系统，沿用亮色） ============ -->
+                <ResourceDictionary x:Key="Default">
+                    <Color x:Key="PrimaryColor">#2563EB</Color>
+                    <Color x:Key="PrimaryDarkColor">#1D4ED8</Color>
+                    <Color x:Key="PrimaryLightColor">#3B82F6</Color>
+                    <Color x:Key="SecondaryColor">#10B981</Color>
+                    <Color x:Key="AccentColor">#F59E0B</Color>
+                    <Color x:Key="DangerColor">#EF4444</Color>
+                    <Color x:Key="SuccessColor">#10B981</Color>
+                    <Color x:Key="WarningColor">#F59E0B</Color>
+                    <Color x:Key="InfoColor">#3B82F6</Color>
+
+                    <Color x:Key="Gray50">#F9FAFB</Color>
+                    <Color x:Key="Gray100">#F3F4F6</Color>
+                    <Color x:Key="Gray200">#E5E7EB</Color>
+                    <Color x:Key="Gray300">#D1D5DB</Color>
+                    <Color x:Key="Gray400">#9CA3AF</Color>
+                    <Color x:Key="Gray500">#6B7280</Color>
+                    <Color x:Key="Gray600">#4B5563</Color>
+                    <Color x:Key="Gray700">#374151</Color>
+                    <Color x:Key="Gray800">#1F2937</Color>
+                    <Color x:Key="Gray900">#111827</Color>
+
+                    <Color x:Key="TextPrimaryColor">#111827</Color>
+                    <Color x:Key="TextSecondaryColor">#6B7280</Color>
+                    <Color x:Key="TextMutedColor">#9CA3AF</Color>
+
+                    <Color x:Key="BackgroundColor">#F9FAFB</Color>
+                    <Color x:Key="SurfaceColor">#FFFFFF</Color>
+                    <Color x:Key="CardBackgroundColor">#FFFFFF</Color>
+
+                    <Color x:Key="BorderLightColor">#E5E7EB</Color>
+                    <Color x:Key="BorderColor">#D1D5DB</Color>
+                </ResourceDictionary>
+            </ResourceDictionary.ThemeDictionaries>
+
+            <!-- 画笔引用主题色（主题切换时自动重算） -->
+            <SolidColorBrush x:Key="PrimaryBrush" Color="{ThemeResource PrimaryColor}" />
+            <SolidColorBrush x:Key="PrimaryDarkBrush" Color="{ThemeResource PrimaryDarkColor}" />
+            <SolidColorBrush x:Key="PrimaryLightBrush" Color="{ThemeResource PrimaryLightColor}" />
+            <SolidColorBrush x:Key="SecondaryBrush" Color="{ThemeResource SecondaryColor}" />
+            <SolidColorBrush x:Key="AccentBrush" Color="{ThemeResource AccentColor}" />
+            <SolidColorBrush x:Key="DangerBrush" Color="{ThemeResource DangerColor}" />
+            <SolidColorBrush x:Key="SuccessBrush" Color="{ThemeResource SuccessColor}" />
+            <SolidColorBrush x:Key="WarningBrush" Color="{ThemeResource WarningColor}" />
+            <SolidColorBrush x:Key="InfoBrush" Color="{ThemeResource InfoColor}" />
+
+            <SolidColorBrush x:Key="Gray50Brush" Color="{ThemeResource Gray50}" />
+            <SolidColorBrush x:Key="Gray100Brush" Color="{ThemeResource Gray100}" />
+            <SolidColorBrush x:Key="Gray200Brush" Color="{ThemeResource Gray200}" />
+            <SolidColorBrush x:Key="Gray300Brush" Color="{ThemeResource Gray300}" />
+            <SolidColorBrush x:Key="Gray400Brush" Color="{ThemeResource Gray400}" />
+            <SolidColorBrush x:Key="Gray500Brush" Color="{ThemeResource Gray500}" />
+            <SolidColorBrush x:Key="Gray600Brush" Color="{ThemeResource Gray600}" />
+            <SolidColorBrush x:Key="Gray700Brush" Color="{ThemeResource Gray700}" />
+            <SolidColorBrush x:Key="Gray800Brush" Color="{ThemeResource Gray800}" />
+            <SolidColorBrush x:Key="Gray900Brush" Color="{ThemeResource Gray900}" />
+
+            <SolidColorBrush x:Key="TextPrimaryBrush" Color="{ThemeResource TextPrimaryColor}" />
+            <SolidColorBrush x:Key="TextSecondaryBrush" Color="{ThemeResource TextSecondaryColor}" />
+            <SolidColorBrush x:Key="TextMutedBrush" Color="{ThemeResource TextMutedColor}" />
+
+            <SolidColorBrush x:Key="BackgroundBrush" Color="{ThemeResource BackgroundColor}" />
+            <SolidColorBrush x:Key="SurfaceBrush" Color="{ThemeResource SurfaceColor}" />
+            <SolidColorBrush x:Key="CardBackgroundBrush" Color="{ThemeResource CardBackgroundColor}" />
+
+            <SolidColorBrush x:Key="BorderLightBrush" Color="{ThemeResource BorderLightColor}" />
+            <SolidColorBrush x:Key="BorderBrush" Color="{ThemeResource BorderColor}" />
 
             <!-- Spacing -->
             <x:Double x:Key="SpacingXs">4</x:Double>
@@ -110,8 +183,8 @@
 
             <!-- Card Style -->
             <Style x:Key="CardStyle" TargetType="Border">
-                <Setter Property="Background" Value="{StaticResource CardBackgroundBrush}" />
-                <Setter Property="BorderBrush" Value="{StaticResource BorderLightBrush}" />
+                <Setter Property="Background" Value="{ThemeResource CardBackgroundBrush}" />
+                <Setter Property="BorderBrush" Value="{ThemeResource BorderLightBrush}" />
                 <Setter Property="BorderThickness" Value="1" />
                 <Setter Property="CornerRadius" Value="{StaticResource RadiusLg}" />
                 <Setter Property="Padding" Value="{StaticResource SpacingLg}" />
@@ -119,7 +192,7 @@
 
             <!-- Primary Button Style -->
             <Style x:Key="PrimaryButtonStyle" TargetType="Button">
-                <Setter Property="Background" Value="{StaticResource PrimaryBrush}" />
+                <Setter Property="Background" Value="{ThemeResource PrimaryBrush}" />
                 <Setter Property="Foreground" Value="White" />
                 <Setter Property="BorderThickness" Value="0" />
                 <Setter Property="CornerRadius" Value="{StaticResource RadiusMd}" />
@@ -130,10 +203,10 @@
 
             <!-- Secondary Button Style -->
             <Style x:Key="SecondaryButtonStyle" TargetType="Button">
-                <Setter Property="Background" Value="{StaticResource Gray100Brush}" />
-                <Setter Property="Foreground" Value="{StaticResource TextPrimaryBrush}" />
+                <Setter Property="Background" Value="{ThemeResource Gray100Brush}" />
+                <Setter Property="Foreground" Value="{ThemeResource TextPrimaryBrush}" />
                 <Setter Property="BorderThickness" Value="1" />
-                <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}" />
+                <Setter Property="BorderBrush" Value="{ThemeResource BorderBrush}" />
                 <Setter Property="CornerRadius" Value="{StaticResource RadiusMd}" />
                 <Setter Property="Padding" Value="16,10" />
                 <Setter Property="FontSize" Value="{StaticResource FontSizeSm}" />
@@ -143,7 +216,7 @@
             <!-- Ghost Button Style -->
             <Style x:Key="GhostButtonStyle" TargetType="Button">
                 <Setter Property="Background" Value="Transparent" />
-                <Setter Property="Foreground" Value="{StaticResource PrimaryBrush}" />
+                <Setter Property="Foreground" Value="{ThemeResource PrimaryBrush}" />
                 <Setter Property="BorderThickness" Value="0" />
                 <Setter Property="CornerRadius" Value="{StaticResource RadiusMd}" />
                 <Setter Property="Padding" Value="12,8" />
@@ -154,27 +227,34 @@
             <Style x:Key="SectionTitleStyle" TargetType="TextBlock">
                 <Setter Property="FontSize" Value="{StaticResource FontSizeXl}" />
                 <Setter Property="FontWeight" Value="Bold" />
-                <Setter Property="Foreground" Value="{StaticResource TextPrimaryBrush}" />
+                <Setter Property="Foreground" Value="{ThemeResource TextPrimaryBrush}" />
             </Style>
 
             <!-- Card Title Style -->
             <Style x:Key="CardTitleStyle" TargetType="TextBlock">
                 <Setter Property="FontSize" Value="{StaticResource FontSizeLg}" />
                 <Setter Property="FontWeight" Value="SemiBold" />
-                <Setter Property="Foreground" Value="{StaticResource TextPrimaryBrush}" />
+                <Setter Property="Foreground" Value="{ThemeResource TextPrimaryBrush}" />
+            </Style>
+
+            <!-- Page Header Title (Gallery 风格大标题) -->
+            <Style x:Key="PageHeaderTitleStyle" TargetType="TextBlock">
+                <Setter Property="FontSize" Value="{StaticResource FontSize3xl}" />
+                <Setter Property="FontWeight" Value="Bold" />
+                <Setter Property="Foreground" Value="{ThemeResource TextPrimaryBrush}" />
             </Style>
 
             <!-- Label Style -->
             <Style x:Key="LabelStyle" TargetType="TextBlock">
                 <Setter Property="FontSize" Value="{StaticResource FontSizeSm}" />
-                <Setter Property="Foreground" Value="{StaticResource TextSecondaryBrush}" />
+                <Setter Property="Foreground" Value="{ThemeResource TextSecondaryBrush}" />
                 <Setter Property="FontWeight" Value="Medium" />
             </Style>
 
             <!-- Value Style -->
             <Style x:Key="ValueStyle" TargetType="TextBlock">
                 <Setter Property="FontSize" Value="{StaticResource FontSizeBase}" />
-                <Setter Property="Foreground" Value="{StaticResource TextPrimaryBrush}" />
+                <Setter Property="Foreground" Value="{ThemeResource TextPrimaryBrush}" />
                 <Setter Property="FontWeight" Value="SemiBold" />
             </Style>
 
