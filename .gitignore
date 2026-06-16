@@ -1,0 +1,102 @@
+## ============================================================
+## .NET / Visual Studio / WinUI 3
+## 基于 GitHub 官方 VisualStudio.gitignore 精简，按用途分组
+## ============================================================
+
+## ---------------- Build 产物 ----------------
+[Bb]in/
+[Oo]bj/
+artifacts/
+bin/
+obj/
+out/
+publish/
+publish/AutoPublish/
+*.dll
+*.exe
+*.pdb
+*.pri
+*.xrf
+*.xbf
+*.appx
+*.msix
+*.msixbundle
+*.appxupload
+*.appxsym
+*.cer
+*.pfx
+*.mdf
+*.ldf
+
+## ---------------- NuGet ----------------
+*.nupkg
+*.snupkg
+**/packages/*
+!**/packages/build/
+*.nuget.props
+*.nuget.targets
+project.lock.json
+project.fragment.lock.json
+project.fragment.json
+artifacts/
+
+## ---------------- MSBuild / Visual Studio ----------------
+*.user
+*.suo
+*.userprefs
+*.cache
+*.vspscc
+*.vssscc
+.builds
+*.pidb
+*.svclog
+*.scc
+*.psess
+*.vspx
+*.rsp
+*.tlog
+
+# Visual Studio 临时文件 / 工作区
+.vs/
+.vscode/
+.idea/
+*.sln.docstates
+*.vshost.*
+AppPackages/
+
+# MSIX 打包中间产物（单项目 MSIX）
+*.appx
+Generated Files/
+
+## ---------------- 单元测试 ----------------
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+TestResults/
+*.coverage
+*.coveragexml
+*.trx
+
+## ---------------- 日志与运行时数据（不应入库） ----------------
+*.log
+logs/
+debug.log
+
+# 运行时用户配置：实际配置位于 %AppData%\ClockSystem.WinUI\clock.json
+clock.runtime.json
+
+## ---------------- 安全 / 密钥 ----------------
+*.snk
+*.key
+secrets.json
+appsettings.Development.json
+
+## ---------------- 操作系统 ----------------
+Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+.DS_Store
+*.swp
+*~
